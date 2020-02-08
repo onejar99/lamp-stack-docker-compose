@@ -35,3 +35,5 @@ services:
       - mysql
     environment:
       PMA_HOST: mysql
+      UPLOAD_LIMIT: 100M
+
