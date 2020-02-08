@@ -7,9 +7,11 @@ Launch LAMP services by docker-compose. This environment consists of 3 container
 2. MYSQL 5.6.46
 3. PHPMYADMIN 5.0.0 (image: php 7.4.1; Apache/2.4.38 (Debian))
 
+> Purposes of development and test. Not recommended to use in production environment.
+
 ## User Guide
 
-### Progject Structure:
+### Project Structure:
 
 ```
 $ tree
@@ -24,36 +26,38 @@ $ tree
 ```
 
 * `db-data`: persistent MySQL DB Data will be here.
-* `www`: place your php web code.
+* `www`: place your php web code here.
 
 
 ### Usage
 
 1. git clone tihs repository.
 
+2. Copy your php web code into directory `www`.
 
-2. IMPORTANT! Modify MySQL Root Password in docker-compose.yml:
+3. **IMPORTANT!!** Modify MySQL Root Password in docker-compose.yml:
 
 ```
 MYSQL_ROOT_PASSWORD: root1234
 ```
 
-3. Copy your php web code into directory `www`.
+4. (Optional) If you have existing mysql data(`/var/lib/mysql`), you can copy them to overwrite `db-data/*`.
 
-4. Launch LAMP services:
+
+5. Launch LAMP services:
 
 ```
 $ cd lamp-stack-docker-compose
 $ docker-compose up -d
 ```
 
-5. Test:
-	- Pure PHP: http://127.0.0.1:41001
-	- DB Connect: http://127.0.0.1:41001/connDB.php
-	- PhpMyAdmin http://127.0.0.1:410012
+6. Test:
+    - Pure PHP: http://127.0.0.1:41001
+    - DB Connect: http://127.0.0.1:41001/connDB.php
+    - PhpMyAdmin http://127.0.0.1:41002
 
 
-6. If you want to terminal LAMP services but keep data:
+7. If you want to terminal LAMP services but keep data:
 ```
 $ docker-compose down
 ```
