@@ -31,7 +31,7 @@ $ tree
 
 ### Usage
 
-1. git clone tihs repository.
+1. `git clone` this repository.
 
 2. Copy your php web code into directory `www`.
 
@@ -41,7 +41,7 @@ $ tree
 MYSQL_ROOT_PASSWORD: root1234
 ```
 
-4. (Optional) If you have existing mysql data(`/var/lib/mysql`), you can copy them to overwrite `db-data/*`.
+4. (Optional) If you have existing mysql data(`/var/lib/mysql/*`), you can copy them to overwrite `db-data/*`.
 
 
 5. Launch LAMP services:
@@ -61,7 +61,7 @@ $ docker-compose up -d
 ```
 $ docker-compose down
 ```
-> * container instances will be removed.
+> * Container instances will be removed.
 > * MySQL data will persist in folder `db-data`.
 
 
